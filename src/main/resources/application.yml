@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chunut?serverTimezone=Asia/Seoul&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update # 없으면 만들고 있으면 그대로 사용
+    show-sql: true # mysql debug mode, 실제 쿼리가 로그로 보임
+    database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
+    properties:
+      hibernate: # custom options
+        format_sql: true # sql 로그를 포매팅해서 보여줌
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 27601484758-ukmhst60qa2tgjbt6aan9qge5m4h9ub2.apps.googleusercontent.com
+            clientSecret: 5j507hhH2ckB5JrCzxN_4wuj
+            scope:
+              - email
+              -pr ofile
+
+
+
+#cloud:
+#  aws:
+#    credentials:
+#      accessKey: YOUR_ACCESS_KEY
+#      secretKey: YOUR_SECRET_KEY
+#    s3:
+#      bucket: YOUR_BUCKET_NAME
+#    region:
+#      static: YOUR_REGION
+#    stack:
+#      auto: false
+
